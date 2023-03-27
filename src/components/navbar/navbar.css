@@ -1,3 +1,121 @@
-div {
-    background-color: black;
+.navbarSection {
+    background-color: rgb(0, 102, 167);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    padding: 0 1.5rem;
+    margin-bottom: 1px;
+}
+
+.navLogoContainer {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    gap: 2rem;
+    flex: 1;
+}
+
+.navLogoContainer>img {
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+
+.menuToggler {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.navOptionsContainer {
+    display: flex;
+    gap: 22px;
+    color: #ffffff;
+    font-size: 0.7em;
+}
+
+.navOptionBorder {
+    color: #ffffff;
+    height: 3.2rem;
+}
+
+.navOption {
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.navLocationToggles {
+    cursor: pointer;
+}
+
+
+.navOptionchecked {
+    position: absolute;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ffffff !important;
+    cursor: pointer;
+
+}
+
+
+.navPickupColor {
+    color: rgb(85, 204, 246) !important;
+}
+
+.navLocationContainer {
+    background-color: rgb(0, 88, 153);
+    margin: auto 28px;
+    display: flex;
+    gap: 18px;
+    padding: 7px;
+    align-items: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.navLocationText>p {
+    font-size: 0.9rem;
+}
+
+.navLocationSubText {
+    font-size: 0.72rem;
+    color: rgb(85, 204, 246);
+}
+
+.navLocation {
+    font-size: 1.3rem;
+}
+
+.navLocationEdit {
+    font-size: 1.2rem;
+}
+
+.navAccountContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.navAccount {
+    font-size: 2rem;
+}
+
+.navAccountTextHead {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.navAccountTextSubHead {
+    font-size: 11px;
+    color: rgb(85, 204, 246);
+
 }
