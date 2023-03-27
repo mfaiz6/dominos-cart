@@ -2,6 +2,7 @@ import './navbar.css'
 import logo from '../../assets/logo_white.svg'
 
 const Navbar = () => {
+    
     return (
         <>
             <div className="navbarSection">
