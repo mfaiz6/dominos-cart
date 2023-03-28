@@ -21,20 +21,16 @@ function App() {
   }
 
 
-
-  
-
- 
   return (
     <>
       <Navbar />
 
       <div className="bodyDivison">
-        <ProductCard cart={cart} key={cartKey+1}  />
+        <ProductCard cart={cart}  />
         <Cart cart={cart} key={cartKey} />
 
       </div>
-      {!cart && (<span className="material-symbols-outlined cart" id="cart" onClick={handleClick}>shopping_cart</span>)}
+      <span className="material-symbols-outlined cart" id="cart" onClick={handleClick}>shopping_cart</span>
       {cart && (<span className="material-symbols-outlined closeButton" id='close' onClick={handleCloseButton}>close</span>)}
     </>
   );

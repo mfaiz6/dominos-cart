@@ -1,6 +1,18 @@
+import { useSelector, useDispatch } from 'react-redux'
 import './cart.css'
+import { getCartTotal, removeItem, increaseItemQuantity, decreaseItemQuantity } from '../../features/cartSlice'
+import { useEffect } from 'react'
 
 const Cart = ({ cart }) => {
+
+  const { myCart, totalPrice } = useSelector((state) => state.allCart)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getCartTotal())
+  }, [myCart])
+
 
   if (!cart) {
     return null
@@ -14,129 +26,43 @@ const Cart = ({ cart }) => {
       <div className="cartSections">
         <div className="cartHead">
 
-          <div className="cartItemContainer">
+          {myCart.map((item, index) => (
+            <div className="cartItemContainer" key={index}>
 
-            <div className="cartItemHead">
-              <div className="itemImage">
-                <img src="https://images.dominos.co.in/new_margherita_2502.jpg" alt="" />
-              </div>
-              <div className="itemText">
-                <h4>Margherita</h4>
-                <p>Classic delight with 100% real mozzarella cheese</p>
-              </div>
-            </div>
-
-            <div className='cartItemFoot'>
-
-              <div className="itemDetail">
-                <div className="itemQuantity">
-                  <span className='quantityMinus quantityBox'>-</span>
-                  <span className='quantityBox'>2</span>
-                  <span className='quantityPlus quantityBox'>+</span>
+              <div className="cartItemHead">
+                <div className="itemImage">
+                  <img src={item.image} alt={item.name} />
                 </div>
-                <div className="itemPrice">
-                  <h5>₹ 239.00</h5>
+                <div className="itemText">
+                  <h4>{item.name}</h4>
+                  <p>{item.desc}</p>
                 </div>
-
               </div>
 
-            </div>
+              <div className='cartItemFoot'>
 
+                <div className="itemDetail">
+                  <div className="itemQuantity">
+                    <span className='quantityMinus quantityBox' onClick={() => dispatch(decreaseItemQuantity(item.id))}>-</span>
+                    <span className='quantityBox'>{item.quantity}</span>
+                    <span className='quantityPlus quantityBox' onClick={() => dispatch(increaseItemQuantity(item.id))}>+</span>
+                  </div>
+                  <span class="material-symbols-outlined quantityBox" onClick={() => dispatch(removeItem(item.id))}>delete</span>
+                  <div className="itemPrice">
+                    <h5>₹ {item.price}</h5>
+                  </div>
 
-          </div>
-
-          <div className="cartItemContainer">
-
-            <div className="cartItemHead">
-              <div className="itemImage">
-                <img src="https://images.dominos.co.in/new_margherita_2502.jpg" alt="" />
-              </div>
-              <div className="itemText">
-                <h4>Margherita</h4>
-                <p>Classic delight with 100% real mozzarella cheese</p>
-              </div>
-            </div>
-
-            <div className='cartItemFoot'>
-
-              <div className="itemDetail">
-                <div className="itemQuantity">
-                  <span className='quantityMinus quantityBox'>-</span>
-                  <span className='quantityBox'>2</span>
-                  <span className='quantityPlus quantityBox'>+</span>
-                </div>
-                <div className="itemPrice">
-                  <h5>₹ 239.00</h5>
                 </div>
 
               </div>
 
-            </div>
-
-
-          </div>
-
-          <div className="cartItemContainer">
-
-            <div className="cartItemHead">
-              <div className="itemImage">
-                <img src="https://images.dominos.co.in/new_margherita_2502.jpg" alt="" />
-              </div>
-              <div className="itemText">
-                <h4>Margherita</h4>
-                <p>Classic delight with 100% real mozzarella cheese</p>
-              </div>
-            </div>
-
-            <div className='cartItemFoot'>
-
-              <div className="itemDetail">
-                <div className="itemQuantity">
-                  <span className='quantityMinus quantityBox'>-</span>
-                  <span className='quantityBox'>2</span>
-                  <span className='quantityPlus quantityBox'>+</span>
-                </div>
-                <div className="itemPrice">
-                  <h5>₹ 239.00</h5>
-                </div>
-
-              </div>
 
             </div>
+          ))
+
+          }
 
 
-          </div>
-
-          <div className="cartItemContainer">
-
-            <div className="cartItemHead">
-              <div className="itemImage">
-                <img src="https://images.dominos.co.in/new_margherita_2502.jpg" alt="" />
-              </div>
-              <div className="itemText">
-                <h4>Margherita</h4>
-                <p>Classic delight with 100% real mozzarella cheese</p>
-              </div>
-            </div>
-
-            <div className='cartItemFoot'>
-
-              <div className="itemDetail">
-                <div className="itemQuantity">
-                  <span className='quantityMinus quantityBox'>-</span>
-                  <span className='quantityBox'>2</span>
-                  <span className='quantityPlus quantityBox'>+</span>
-                </div>
-                <div className="itemPrice">
-                  <h5>₹ 239.00</h5>
-                </div>
-
-              </div>
-
-            </div>
-
-
-          </div>
 
 
         </div>
@@ -145,7 +71,7 @@ const Cart = ({ cart }) => {
 
           <div className="cartTotalPrice">
             <h5>Subtotal</h5>
-            <h5>₹ 239.00</h5>
+            <h5>₹ {totalPrice}</h5>
           </div>
 
           <div className="cartCheckoutButton">
