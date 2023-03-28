@@ -1,9 +1,13 @@
 .productCardContainer {
   flex: 0.7;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   gap: 34px;
   padding: 3rem;
+}
+
+.productCardContainerHide {
+  display: none;
 }
 
 .column {
@@ -17,6 +21,7 @@
   min-height: 300px;
   position: relative;
 }
+
 
 .container {
   padding: 2px 16px;
@@ -48,19 +53,19 @@
   color: #ffffff;
   font-size: 28px;
   position: absolute;
-  top: 90px;
+  top: 130px;
   left: 12px;
 }
 
 @media (max-width: 1440px) {
   .price {
-    top: 20%;
+    top: 45%;
   }
 }
 
 @media (max-width: 1047px) {
   .price {
-    top: 20%;
+    top: 40%;
   }
 }
 
@@ -72,7 +77,11 @@
 
 @media (max-width: 824px) {
   .price {
-    top: 10%;
+    top: 45%;
+  }
+
+  .container>p {
+    font-size: 0.575rem;
   }
 
 }
@@ -87,6 +96,6 @@
   }
 
   .price {
-    top: 30%;
+    top: 45%;
   }
 }

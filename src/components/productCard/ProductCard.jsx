@@ -1,15 +1,23 @@
 import './productCard.css'
 import { pizza } from '../../assets/data'
 
-const ProductCard = () => {
+const ProductCard = ({cart}) => {
+
+  const productCardContainer = document.getElementById("productCardContainerId")
+  if(cart) {
+    productCardContainer.classList.add("productCardContainerHide")
+  }
+
+
+
   return (
 
-    <div className="productCardContainer">
+    <div className="productCardContainer" id="productCardContainerId">
 
       {pizza.map((item, index) => (
         <div className="column" key={index}>
           <div className="card">
-            <img src={item.image} alt={item.name} style={{ width: "100%", height:"90%" }} />
+            <img src={item.image} alt={item.name} style={{ width: "100%", height:"170px", objectFit: "cover" }} />
             <div className="price">
               <h6>₹ {item.price}</h6>
             </div>
