@@ -1,0 +1,10 @@
+.cartContainer {
+    flex: 0.3;
+    
+}
+
+@media (max-width: 1068px) {
+    .cartContainer {
+        display: none;
+    }
+}

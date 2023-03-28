@@ -1,0 +1,93 @@
+.productCardContainer {
+  flex: 0.7;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px;
+  padding: 3rem;
+}
+
+.column {
+  flex: 30%;
+  padding: 3px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  min-height: 300px;
+  position: relative;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.container>p {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: rgba(122, 122, 122, 0.87);
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.button>button {
+  cursor: pointer;
+  padding: 0.4rem;
+  border: 1px solid rgb(0, 171, 0);
+  color: rgb(0, 171, 0);
+  background-color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.price {
+  color: #ffffff;
+  font-size: 28px;
+  position: absolute;
+  top: 90px;
+  left: 12px;
+}
+
+@media (max-width: 1440px) {
+  .price {
+    top: 20%;
+  }
+}
+
+@media (max-width: 1047px) {
+  .price {
+    top: 20%;
+  }
+}
+
+@media (max-width: 1068px) {
+  .productCardContainer {
+    flex: auto;
+  }
+}
+
+@media (max-width: 824px) {
+  .price {
+    top: 10%;
+  }
+
+}
+
+@media (max-width: 674px) {
+  .productCardContainer {
+    padding: 2rem;
+  }
+
+  .column {
+    flex: auto;
+  }
+
+  .price {
+    top: 30%;
+  }
+}

@@ -1,6 +1,7 @@
 .navbarSection {
     position:sticky;
     top: 0;
+    z-index: 1;
     background-color: rgb(0, 102, 167);
     display: flex;
     justify-content: space-between;
