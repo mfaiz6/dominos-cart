@@ -44,7 +44,7 @@ body {
         display: none;
       }
 
-      .closeButtonShow {
+      .closeButtonShow ,#close {
         display: block;
         color: #ffffff;
         font-size: 26px;

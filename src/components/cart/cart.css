@@ -133,9 +133,9 @@ margin-top: 7px;
 @media (max-width: 824px) {
   .cartContainer {
     display: none;
+    display: block;
   }
 
   .cartContainerShow {
-    display: block;
   }
 }

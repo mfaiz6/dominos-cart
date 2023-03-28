@@ -2,9 +2,8 @@ import './cart.css'
 
 const Cart = ({ cart }) => {
 
-  const cartContainer = document.getElementById("cartId")
-  if (cart) {
-    cartContainer.classList.add("cartContainerShow")
+  if (!cart) {
+    return null
   }
 
 
@@ -138,10 +137,6 @@ const Cart = ({ cart }) => {
 
 
           </div>
-
-
-
-
 
 
         </div>

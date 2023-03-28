@@ -3,9 +3,8 @@ import { pizza } from '../../assets/data'
 
 const ProductCard = ({cart}) => {
 
-  const productCardContainer = document.getElementById("productCardContainerId")
   if(cart) {
-    productCardContainer.classList.add("productCardContainerHide")
+    return null
   }
 
 

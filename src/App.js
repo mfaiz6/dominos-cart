@@ -12,30 +12,14 @@ function App() {
   const handleClick = () => {
     openCart(!cart)
     setCartKey(cartKey+1)
-    console.log(cart);
   }
-
-  const cartIcon = document.getElementById("cart")
-  const closeBtn = document.getElementById("close")
 
   const handleCloseButton = (e) => {
     openCart(!cart)
     setCartKey(cartKey+1)
 
-    // const cartIcon = document.getElementById("cart")
-    cartIcon.classList.remove("cartIconHide")
-
-    // const closeBtn = document.getElementById("close")
-    closeBtn.classList.remove("closeButtonShow")
   }
 
-  if(cart) {
-    // const cartIcon = document.getElementById("cart")
-    cartIcon.classList.add("cartIconHide")
-
-    // const closeBtn = document.getElementById("close")
-    closeBtn.classList.add("closeButtonShow")
-  }
 
 
   
@@ -46,12 +30,12 @@ function App() {
       <Navbar />
 
       <div className="bodyDivison">
-        <ProductCard cart={cart}  />
+        <ProductCard cart={cart} key={cartKey+1}  />
         <Cart cart={cart} key={cartKey} />
 
       </div>
-      <span className="material-symbols-outlined cart" id="cart" onClick={handleClick}>shopping_cart</span>
-      <span className="material-symbols-outlined closeButton" id='close' onClick={handleCloseButton}>close</span>
+      {!cart && (<span className="material-symbols-outlined cart" id="cart" onClick={handleClick}>shopping_cart</span>)}
+      {cart && (<span className="material-symbols-outlined closeButton" id='close' onClick={handleCloseButton}>close</span>)}
     </>
   );
 }
